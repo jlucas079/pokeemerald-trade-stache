@@ -1049,6 +1049,8 @@
 #define EXP_3000  3
 #define EXP_10000 4
 #define EXP_30000 5
+//ADDED NOW: COULD BREAK SOMETHING
+#define EXP_TO_CAP_PARAM   6  // “Super Candy” parameter
 
 // Item type IDs (used to determine the exit callback)
 #define ITEM_USE_MAIL             0

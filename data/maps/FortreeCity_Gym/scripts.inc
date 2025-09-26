@@ -58,10 +58,15 @@ FortreeCity_Gym_EventScript_GiveAerialAce2::
 	end
 
 FortreeCity_Gym_EventScript_GiveAerialAce::
-	giveitem ITEM_TM_AERIAL_ACE
+	giveitem ITEM_TM_SHADOW_BALL, 90
+	giveitem ITEM_TM_FLAMETHROWER, 90
+	giveitem ITEM_TM_ICE_BEAM, 90
+	giveitem ITEM_TM_PSYCHIC, 90
+	giveitem ITEM_LIFE_ORB 
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	msgbox FortreeCity_Gym_Text_ExplainAerialAce, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM_AERIAL_ACE
+	warp MAP_LILYCOVE_CITY, 24, 16
 	return
 
 FortreeCity_Gym_EventScript_WinonaRematch::
@@ -164,14 +169,10 @@ FortreeCity_Gym_Text_JaredPostBattle:
 	.string "our LEADER?$"
 
 FortreeCity_Gym_Text_EdwardoIntro:
-	.string "The lovers of BIRD POKéMON aspire\n"
-	.string "to join this GYM.\p"
-	.string "As a member of the FORTREE GYM,\n"
-	.string "I'm not allowed to lose!$"
+	.string "Did you miss Team Aqua?$"
 
 FortreeCity_Gym_Text_EdwardoDefeat:
-	.string "It was too much of a load for me\n"
-	.string "to bear…$"
+	.string "We'll be back...$"
 
 FortreeCity_Gym_Text_EdwardoPostBattle:
 	.string "The world is huge, and there are\n"
@@ -180,13 +181,12 @@ FortreeCity_Gym_Text_EdwardoPostBattle:
 	.string "myself even stronger.$"
 
 FortreeCity_Gym_Text_FlintIntro:
-	.string "There's no need for WINONA, our GYM\n"
-	.string "LEADER, to deal with you!\p"
-	.string "I'm plenty good enough for you!$"
+	.string "Let's see if this team looks\n"
+	.string "familiar!$"
 
 FortreeCity_Gym_Text_FlintDefeat:
-	.string "WINONA, I…\n"
-	.string "I lost!$"
+	.string "Wow, your power really\n"
+	.string "reminds me of someone...$"
 
 FortreeCity_Gym_Text_FlintPostBattle:
 	.string "WINONA is cute and she's strong.\n"

@@ -138,16 +138,48 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "LavaridgeTown_EventScript_EggWoman",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
+      "x": 8,
+      "y": 18,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "LavaridgeTown_EventScript_EncounterGuard",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_1",
+      "x": 3,
+      "y": 15,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "1",
+      "script": "LavaridgeTown_EventScript_Trader2",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_1",
+      "x": 2,
+      "y": 15,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "1",
+      "script": "LavaridgeTown_EventScript_Trader1",
+      "flag": "0"
     }
   ],
   "warp_events": [
-    {
-      "x": 12,
-      "y": 15,
-      "elevation": 0,
-      "dest_map": "MAP_LAVARIDGE_TOWN_HERB_SHOP",
-      "dest_warp_id": "0"
-    },
     {
       "x": 5,
       "y": 15,
@@ -156,24 +188,10 @@
       "dest_warp_id": "0"
     },
     {
-      "x": 15,
-      "y": 5,
-      "elevation": 0,
-      "dest_map": "MAP_LAVARIDGE_TOWN_MART",
-      "dest_warp_id": "0"
-    },
-    {
       "x": 9,
       "y": 6,
       "elevation": 0,
       "dest_map": "MAP_LAVARIDGE_TOWN_POKEMON_CENTER_1F",
-      "dest_warp_id": "0"
-    },
-    {
-      "x": 16,
-      "y": 15,
-      "elevation": 0,
-      "dest_map": "MAP_LAVARIDGE_TOWN_HOUSE",
       "dest_warp_id": "0"
     },
     {

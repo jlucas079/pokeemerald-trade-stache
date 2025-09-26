@@ -130,6 +130,22 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GoSeeRival::
 
 LittlerootTown_ProfessorBirchsLab_EventScript_AgreeToSeeRival::
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_GetRivalToTeachYou, MSGBOX_DEFAULT
+	giveitem ITEM_RARE_CANDY, 999
+	giveitem ITEM_PROTEIN, 999
+	giveitem ITEM_ULTRA_BALL, 999
+	giveitem ITEM_MASTER_BALL, 99
+	giveitem ITEM_CHESTO_BERRY, 99
+	giveitem ITEM_CHERI_BERRY, 99
+	giveitem ITEM_ASPEAR_BERRY, 99
+	giveitem ITEM_ORAN_BERRY, 99
+	giveitem ITEM_PERSIM_BERRY, 99
+	giveitem ITEM_RAWST_BERRY, 99
+	giveitem ITEM_PECHA_BERRY, 99
+	giveitem ITEM_IRON, 99
+	giveitem ITEM_HP_UP, 99
+	giveitem ITEM_CALCIUM, 99
+	giveitem ITEM_ZINC, 99
+	giveitem ITEM_CARBOS, 99
 	clearflag FLAG_HIDE_ROUTE_101_BOY
 	setvar VAR_BIRCH_LAB_STATE, 3
 	releaseall

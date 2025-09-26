@@ -4362,9 +4362,25 @@ void GetCodeFeedback(void)
         gSpecialVar_Result = 0;
 }
 
+<<<<<<< HEAD
 void SetHiddenNature(void)
 {
     u32 hiddenNature = gSpecialVar_Result;
     SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HIDDEN_NATURE, &hiddenNature);
     CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
+=======
+// NEW:
+// Removes the party Pokémon at index VAR_0x8004, shifts everyone down,
+// then clears the final slot, hopefully
+bool8 RemovePartyMonAtIndex(void)
+{
+    u8 slot = VarGet(VAR_0x8004);
+    if (slot < PARTY_SIZE)
+    {
+        for (u8 i = slot; i < PARTY_SIZE - 1; i++)
+            gPlayerParty[i] = gPlayerParty[i + 1];
+        ZeroMonData(&gPlayerParty[PARTY_SIZE - 1]);
+    }
+    return TRUE;
+>>>>>>> 5d06d28161 (WIP: local edits before rebase)
 }

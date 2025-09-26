@@ -5749,6 +5749,64 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
     }
 }
 
+//NEW:
+void ItemUseCB_StatusSpray(u8 taskId, TaskFunc task)
+{
+    struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
+    u16 itemId = gSpecialVar_ItemId;
+    u16 status = STATUS1_NONE;
+    bool8 cannotUse = FALSE;
+
+    switch (itemId)
+    {
+    case ITEM_IRON:      // Iron now burns
+        status = STATUS1_BURN;
+        break;
+    case ITEM_CARBOS:    // Carbos now paralyzes
+        status = STATUS1_PARALYSIS;
+        break;
+    case ITEM_ZINC:      // Zinc now freezes
+        status = STATUS1_FREEZE;    // or STATUS_FROZEN if your code uses that
+        break;
+    case ITEM_HP_UP:     // HP Up now sleeps
+        status = STATUS1_SLEEP;
+        break;
+    case ITEM_CALCIUM:   // Calcium now poisons
+        status = STATUS1_POISON;
+        break;
+    }
+
+    if (GetMonData(mon, MON_DATA_HP, NULL) == 0
+     || GetMonData(mon, MON_DATA_STATUS, NULL) != 0)
+    {
+        cannotUse = TRUE;
+    }
+
+    if (cannotUse)
+    {
+        gPartyMenuUseExitCallback = FALSE;
+        PlaySE(SE_SELECT);
+        DisplayPartyMenuMessage(gText_WontHaveEffect, TRUE);
+        ScheduleBgCopyTilemapToVram(2);
+        gTasks[taskId].func = task;
+    }
+    else
+    {
+        gPartyMenuUseExitCallback = TRUE;
+        PlaySE(SE_USE_ITEM);
+        RemoveBagItem(itemId, 1);
+
+        SetMonData(mon, MON_DATA_STATUS, &status);
+        CalculateMonStats(mon);
+
+        SetPartyMonAilmentGfx(mon, &sPartyMenuBoxes[gPartyMenu.slotId]);
+
+        DisplayPartyMenuMessage(gText_StatusInflicted, TRUE);
+        ScheduleBgCopyTilemapToVram(2);
+        gTasks[taskId].func = task;
+    }
+}
+
 static void UpdateMonDisplayInfoAfterRareCandy(u8 slot, struct Pokemon *mon)
 {
     SetPartyMonAilmentGfx(mon, &sPartyMenuBoxes[slot]);

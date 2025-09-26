@@ -563,4 +563,8 @@ gSpecials::
 	def_special UseBlankMessageToCancelPokemonPic
 	def_special EnterCode
 	def_special GetCodeFeedback
+<<<<<<< HEAD
 	def_special SetHiddenNature
+=======
+	def_special RemovePartyMonAtIndex
+>>>>>>> 5d06d28161 (WIP: local edits before rebase)

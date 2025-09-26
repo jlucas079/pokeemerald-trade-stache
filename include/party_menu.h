@@ -107,6 +107,7 @@ void MoveDeleterForgetMove(void);
 void BufferMoveDeleterNicknameAndMove(void);
 void GetNumMovesSelectedMonHas(void);
 void MoveDeleterChooseMoveToForget(void);
+<<<<<<< HEAD
 
 bool32 SetUpFieldMove_Surf(void);
 bool32 SetUpFieldMove_Fly(void);
@@ -114,4 +115,8 @@ bool32 SetUpFieldMove_Waterfall(void);
 bool32 SetUpFieldMove_Dive(void);
 bool32 SetUpFieldMove_RockClimb(void);
 
+=======
+//NEW:
+void ItemUseCB_StatusSpray(u8 taskId, TaskFunc task);
+>>>>>>> 5d06d28161 (WIP: local edits before rebase)
 #endif // GUARD_PARTY_MENU_H

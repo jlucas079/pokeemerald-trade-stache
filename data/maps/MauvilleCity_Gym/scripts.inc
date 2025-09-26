@@ -112,7 +112,7 @@ MauvilleCity_Gym_EventScript_WattsonDefeated::
 	end
 
 MauvilleCity_Gym_EventScript_GiveShockWave2::
-	giveitem ITEM_TM_SHOCK_WAVE
+	giveitem ITEM_TM_THUNDERBOLT
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	msgbox MauvilleCity_Gym_Text_ExplainShockWave, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM_SHOCK_WAVE
@@ -120,10 +120,31 @@ MauvilleCity_Gym_EventScript_GiveShockWave2::
 	end
 
 MauvilleCity_Gym_EventScript_GiveShockWave::
-	giveitem ITEM_TM_SHOCK_WAVE
+	giveitem ITEM_TM_THUNDERBOLT
+	giveitem ITEM_BLACK_BELT, 1
+	giveitem ITEM_BLACK_GLASSES, 1
+	giveitem ITEM_CHARCOAL, 1
+	giveitem ITEM_DRAGON_FANG, 1
+	giveitem ITEM_FAIRY_FEATHER, 1
+	giveitem ITEM_HARD_STONE, 1
+	giveitem ITEM_MAGNET, 1
+	giveitem ITEM_METAL_COAT, 1
+	giveitem ITEM_MIRACLE_SEED, 1
+	giveitem ITEM_MYSTIC_WATER, 1
+	giveitem ITEM_NEVER_MELT_ICE, 1
+	giveitem ITEM_POISON_BARB, 1
+	giveitem ITEM_SHARP_BEAK, 1
+	giveitem ITEM_SILK_SCARF, 1
+	giveitem ITEM_SILVER_POWDER, 1
+	giveitem ITEM_SOFT_SAND, 1
+	giveitem ITEM_SPELL_TAG, 1
+	giveitem ITEM_TWISTED_SPOON, 1
+	giveitem ITEM_DRAGON_SCALE, 1
+	giveitem ITEM_LINKING_CORD, 99
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	msgbox MauvilleCity_Gym_Text_ExplainShockWave, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM_SHOCK_WAVE
+	warp MAP_LAVARIDGE_TOWN, 9, 8
 	return
 
 MauvilleCity_Gym_EventScript_CompletedNewMauville::
@@ -272,12 +293,12 @@ MauvilleCity_Gym_Text_GymGuidePostVictory:
 	.string "You've powered the door open!$"
 
 MauvilleCity_Gym_Text_KirkIntro:
-	.string "My electric soul, it'll shatter your\n"
-	.string "dreams whole, whoa-yeahah!$"
+	.string "Let's see if this team looks\n"
+	.string "familiar!$"
 
 MauvilleCity_Gym_Text_KirkDefeat:
-	.string "That was plugged in, amped up,\n"
-	.string "over-driven electric, man!$"
+	.string "Wow, your power really\n"
+	.string "reminds me of someone...$"
 
 MauvilleCity_Gym_Text_KirkPostBattle:
 	.string "POKéMON and rock, it's all about heart,\n"

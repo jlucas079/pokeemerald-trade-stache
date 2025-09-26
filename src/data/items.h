@@ -1339,6 +1339,7 @@ const struct Item gItemsInfo[] =
 
     [ITEM_HP_UP] =
     {
+<<<<<<< HEAD
         .name = ITEM_NAME("HP Up"),
         .price = (I_PRICE >= GEN_7) ? 10000 : 9800,
         .description = COMPOUND_STRING(
@@ -1352,39 +1353,62 @@ const struct Item gItemsInfo[] =
         .flingPower = 30,
         .iconPic = gItemIcon_HPUp,
         .iconPalette = gItemIconPalette_HPUp,
+=======
+        .name         = _("Sleep Spray"),
+        .price        = (I_PRICE >= GEN_7) ? 10000 : 9800,
+        .description  = COMPOUND_STRING(
+            "Sprays a Pokémon\n"
+            "to put it to sleep."),
+        .pocket       = POCKET_ITEMS,
+        .type         = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_StatusSpray,
+        .effect       = NULL,
+        .flingPower   = 30,
+        .iconPic      = gItemIcon_Vitamin,
+        .iconPalette  = gItemIconPalette_HPUp,
+>>>>>>> 5d06d28161 (WIP: local edits before rebase)
     },
 
     [ITEM_PROTEIN] =
     {
+<<<<<<< HEAD
         .name = ITEM_NAME("Protein"),
         .price = (I_PRICE >= GEN_7) ? 10000 : 9800,
+=======
+        .name = _("Super Candy"),
+        .pluralName = _("Super Candies"),
+        .price = (I_PRICE >= GEN_7) ? 10000 : 4800,
+>>>>>>> 5d06d28161 (WIP: local edits before rebase)
         .description = COMPOUND_STRING(
-            "Raises the base\n"
-            "Attack stat of one\n"
-            "Pokémon."),
+            "Raises the level\n"
+            "of a Pokémon to\n"
+            "the cap."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_STAT_BOOST_DRINK,
         .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
-        .effect = gItemEffect_Protein,
-        .flingPower = 30,
+        .fieldUseFunc = ItemUseOutOfBattle_RareCandy,
+        .effect = gItemEffect_RareCandy,
+        .holdEffectParam = EXP_TO_CAP_PARAM,
         .iconPic = gItemIcon_Vitamin,
         .iconPalette = gItemIconPalette_Protein,
     },
 
     [ITEM_IRON] =
     {
+<<<<<<< HEAD
         .name = ITEM_NAME("Iron"),
+=======
+        .name = _("Burn Spray"),
+>>>>>>> 5d06d28161 (WIP: local edits before rebase)
         .price = (I_PRICE >= GEN_7) ? 10000 : 9800,
         .description = COMPOUND_STRING(
-            "Raises the base\n"
-            "Defense stat of\n"
-            "one Pokémon."),
+            "Sprays a Pokemon\n"
+            "to burn it."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_STAT_BOOST_DRINK,
         .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
-        .effect = gItemEffect_Iron,
+        .fieldUseFunc = ItemUseOutOfBattle_StatusSpray,
+        .effect = NULL,
         .flingPower = 30,
         .iconPic = gItemIcon_Vitamin,
         .iconPalette = gItemIconPalette_Iron,
@@ -1392,6 +1416,7 @@ const struct Item gItemsInfo[] =
 
     [ITEM_CALCIUM] =
     {
+<<<<<<< HEAD
         .name = ITEM_NAME("Calcium"),
         .price = (I_PRICE >= GEN_7) ? 10000 : 9800,
         .description = COMPOUND_STRING(
@@ -1406,10 +1431,25 @@ const struct Item gItemsInfo[] =
         .flingPower = 30,
         .iconPic = gItemIcon_Vitamin,
         .iconPalette = gItemIconPalette_Calcium,
+=======
+        .name         = _("Poison Spray"),
+        .price        = (I_PRICE >= GEN_7) ? 10000 : 9800,
+        .description  = COMPOUND_STRING(
+            "Sprays a Pokémon\n"
+            "to poison it."),
+        .pocket       = POCKET_ITEMS,
+        .type         = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_StatusSpray,
+        .effect       = NULL,
+        .flingPower   = 30,
+        .iconPic      = gItemIcon_Vitamin,
+        .iconPalette  = gItemIconPalette_Calcium,
+>>>>>>> 5d06d28161 (WIP: local edits before rebase)
     },
 
     [ITEM_ZINC] =
     {
+<<<<<<< HEAD
         .name = ITEM_NAME("Zinc"),
         .price = (I_PRICE >= GEN_7) ? 10000 : 9800,
         .description = COMPOUND_STRING(
@@ -1424,10 +1464,25 @@ const struct Item gItemsInfo[] =
         .flingPower = 30,
         .iconPic = gItemIcon_Vitamin,
         .iconPalette = gItemIconPalette_Zinc,
+=======
+        .name         = _("Freeze Spray"),
+        .price        = (I_PRICE >= GEN_7) ? 10000 : 9800,
+        .description  = COMPOUND_STRING(
+            "Sprays a Pokémon\n"
+            "to freeze it solid."),
+        .pocket       = POCKET_ITEMS,
+        .type         = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_StatusSpray,
+        .effect       = NULL,
+        .flingPower   = 30,
+        .iconPic      = gItemIcon_Vitamin,
+        .iconPalette  = gItemIconPalette_Zinc,
+>>>>>>> 5d06d28161 (WIP: local edits before rebase)
     },
 
     [ITEM_CARBOS] =
     {
+<<<<<<< HEAD
         .name = ITEM_NAME("Carbos"),
         .pluralName = ITEM_PLURAL_NAME("Carbos"),
         .price = (I_PRICE >= GEN_7) ? 10000 : 9800,
@@ -1443,6 +1498,20 @@ const struct Item gItemsInfo[] =
         .flingPower = 30,
         .iconPic = gItemIcon_Vitamin,
         .iconPalette = gItemIconPalette_Carbos,
+=======
+        .name         = _("Para Spray"),
+        .price        = (I_PRICE >= GEN_7) ? 10000 : 9800,
+        .description  = COMPOUND_STRING(
+            "Sprays a Pokémon\n"
+            "to paralyze it."),
+        .pocket       = POCKET_ITEMS,
+        .type         = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_StatusSpray,
+        .effect       = NULL,
+        .flingPower   = 30,
+        .iconPic      = gItemIcon_Vitamin,
+        .iconPalette  = gItemIconPalette_Carbos,
+>>>>>>> 5d06d28161 (WIP: local edits before rebase)
     },
 
     [ITEM_PP_UP] =

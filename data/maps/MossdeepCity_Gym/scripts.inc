@@ -103,10 +103,14 @@ MossdeepCity_Gym_EventScript_GiveCalmMind2::
 	end
 
 MossdeepCity_Gym_EventScript_GiveCalmMind::
-	giveitem ITEM_TM_CALM_MIND
+	giveitem ITEM_TM_REFLECT
+	giveitem ITEM_TM_LIGHT_SCREEN
+	giveitem ITEM_TM_EARTHQUAKE
+	giveitem ITEM_ASSAULT_VEST
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	msgbox MossdeepCity_Gym_Text_ExplainCalmMind, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM_CALM_MIND
+	warp MAP_SOOTOPOLIS_CITY, 42, 32
 	return
 
 MossdeepCity_Gym_EventScript_TateAndLizaRematch::

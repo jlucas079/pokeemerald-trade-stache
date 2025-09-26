@@ -531,7 +531,6 @@
     {
       "id": "MAPSEC_AQUA_HIDEOUT_OLD",
       "name": "{AQUA} HIDEOUT",
-      "name_clone": true,
       "x": 19,
       "y": 3,
       "width": 1,
@@ -691,7 +690,14 @@
     },
     {
       "id": "MAPSEC_DYNAMIC",
+<<<<<<< HEAD
       "name": ""
+=======
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+>>>>>>> 5d06d28161 (WIP: local edits before rebase)
     },
     {
       "id": "MAPSEC_PALLET_TOWN",
@@ -740,12 +746,26 @@
     {
       "id": "MAPSEC_ROUTE_4_POKECENTER",
       "name": "ROUTE 4",
+<<<<<<< HEAD
       "name_clone": true
+=======
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+>>>>>>> 5d06d28161 (WIP: local edits before rebase)
     },
     {
       "id": "MAPSEC_ROUTE_10_POKECENTER",
       "name": "ROUTE 10",
+<<<<<<< HEAD
       "name_clone": true
+=======
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+>>>>>>> 5d06d28161 (WIP: local edits before rebase)
     },
     {
       "id": "MAPSEC_ROUTE_1",
@@ -866,7 +886,14 @@
     {
       "id": "MAPSEC_UNDERGROUND_PATH_2",
       "name": "UNDERGROUND PATH",
+<<<<<<< HEAD
       "name_clone": true
+=======
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+>>>>>>> 5d06d28161 (WIP: local edits before rebase)
     },
     {
       "id": "MAPSEC_DIGLETTS_CAVE",
@@ -875,7 +902,14 @@
     {
       "id": "MAPSEC_KANTO_VICTORY_ROAD",
       "name": "VICTORY ROAD",
+<<<<<<< HEAD
       "name_clone": true
+=======
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+>>>>>>> 5d06d28161 (WIP: local edits before rebase)
     },
     {
       "id": "MAPSEC_ROCKET_HIDEOUT",
@@ -892,7 +926,14 @@
     {
       "id": "MAPSEC_KANTO_SAFARI_ZONE",
       "name": "SAFARI ZONE",
+<<<<<<< HEAD
       "name_clone": true
+=======
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+>>>>>>> 5d06d28161 (WIP: local edits before rebase)
     },
     {
       "id": "MAPSEC_POKEMON_LEAGUE",
@@ -1065,7 +1106,14 @@
     {
       "id": "MAPSEC_TRAINER_TOWER_2",
       "name": "TRAINER TOWER",
+<<<<<<< HEAD
       "name_clone": true
+=======
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+>>>>>>> 5d06d28161 (WIP: local edits before rebase)
     },
     {
       "id": "MAPSEC_DOTTED_HOLE",

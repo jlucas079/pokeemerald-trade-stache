@@ -168,10 +168,14 @@ DewfordTown_Gym_EventScript_BrawlyDefeated::
 	end
 
 DewfordTown_Gym_EventScript_GiveBulkUp::
-	giveitem ITEM_TM_BULK_UP
+	giveitem ITEM_TM_BRICK_BREAK
+	giveitem ITEM_TM_STEEL_WING
+	giveitem ITEM_HM_ROCK_SMASH
+	giveitem ITEM_HM_STRENGTH
 	goto_if_eq VAR_RESULT, 0, Common_EventScript_BagIsFull
 	msgbox DewfordTown_Gym_Text_ExplainBulkUp, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM_BULK_UP
+	warp MAP_MAUVILLE_CITY, 22, 7
 	return
 
 DewfordTown_Gym_EventScript_GiveBulkUp2:

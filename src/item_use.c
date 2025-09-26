@@ -1464,6 +1464,14 @@ void ItemUseOutOfBattle_Honey(u8 taskId)
     Task_FadeAndCloseBagMenu(taskId);
 }
 
+
+//NEW:
+void ItemUseOutOfBattle_StatusSpray(u8 taskId)
+{
+    gItemUseCB = ItemUseCB_StatusSpray;
+    SetUpItemUseCallback(taskId);
+}
+
 void ItemUseOutOfBattle_CannotUse(u8 taskId)
 {
     DisplayDadsAdviceCannotUseItemMessage(taskId, gTasks[taskId].tUsingRegisteredKeyItem);

@@ -3801,7 +3801,27 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                 u8 param = GetItemHoldEffectParam(item);
                 dataUnsigned = 0;
 
-                if (param == 0) // Rare Candy
+                //NEW: SUPER CANDY 
+                if (param == EXP_TO_CAP_PARAM)
+                {
+                    u8 curLevel = GetMonData(mon, MON_DATA_LEVEL, NULL);
+                    u8 capLevel = GetCurrentLevelCap();
+
+                    while (curLevel < capLevel)
+                    {
+                        u32 nextExp = gExperienceTables[gSpeciesInfo[GetMonData(mon, MON_DATA_SPECIES, NULL)].growthRate][curLevel + 1];
+                        if (B_RARE_CANDY_CAP && B_EXP_CAP_TYPE == EXP_CAP_HARD && nextExp > gExperienceTables[gSpeciesInfo[GetMonData(mon, MON_DATA_SPECIES, NULL)].growthRate][capLevel]){
+                            nextExp = gExperienceTables[gSpeciesInfo[GetMonData(mon, MON_DATA_SPECIES, NULL)].growthRate][capLevel];
+                        }
+                        SetMonData(mon, MON_DATA_EXP, &nextExp);
+                        CalculateMonStats(mon);
+                        curLevel++;
+                    }
+                    retVal = FALSE;
+                }
+                // END OF NEW BRANCH
+
+                else if (param == 0) // Rare Candy
                 {
                     dataUnsigned = gExperienceTables[gSpeciesInfo[GetMonData(mon, MON_DATA_SPECIES, NULL)].growthRate][GetMonData(mon, MON_DATA_LEVEL, NULL) + 1];
                 }

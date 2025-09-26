@@ -68,14 +68,14 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LASS",
-      "x": 4,
-      "y": 23,
+      "x": 10,
+      "y": 33,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "1",
+      "trainer_sight_or_berry_tree_id": "2",
       "script": "MossdeepCity_Gym_EventScript_Samantha",
       "flag": "0"
     },
@@ -236,15 +236,15 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_HEX_MANIAC",
-      "x": 7,
-      "y": 5,
+      "graphics_id": "OBJ_EVENT_GFX_WALLY",
+      "x": 25,
+      "y": 9,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "1",
+      "trainer_sight_or_berry_tree_id": "2",
       "script": "MossdeepCity_Gym_EventScript_Sylvia",
       "flag": "0"
     },
@@ -489,14 +489,14 @@
       "y": 35,
       "elevation": 3,
       "dest_map": "MAP_MOSSDEEP_CITY",
-      "dest_warp_id": "1"
+      "dest_warp_id": "0"
     },
     {
       "x": 7,
       "y": 35,
       "elevation": 3,
       "dest_map": "MAP_MOSSDEEP_CITY",
-      "dest_warp_id": "1"
+      "dest_warp_id": "0"
     },
     {
       "x": 3,
@@ -562,25 +562,18 @@
       "dest_warp_id": "11"
     },
     {
-      "x": 11,
-      "y": 35,
-      "elevation": 3,
-      "dest_map": "MAP_MOSSDEEP_CITY_GYM",
-      "dest_warp_id": "10"
-    },
-    {
       "x": 13,
       "y": 32,
       "elevation": 0,
       "dest_map": "MAP_MOSSDEEP_CITY_GYM",
-      "dest_warp_id": "13"
+      "dest_warp_id": "12"
     },
     {
       "x": 21,
       "y": 10,
       "elevation": 0,
       "dest_map": "MAP_MOSSDEEP_CITY_GYM",
-      "dest_warp_id": "12"
+      "dest_warp_id": "11"
     }
   ],
   "coord_events": [
@@ -649,8 +642,8 @@
     },
     {
       "type": "trigger",
-      "x": 21,
-      "y": 6,
+      "x": 20,
+      "y": 4,
       "elevation": 0,
       "var": "VAR_TEMP_1",
       "var_value": "0",

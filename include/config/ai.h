@@ -8,7 +8,7 @@
 // AI switch chances; if you want more complex behaviour, modify GetSwitchChance
 #define SHOULD_SWITCH_WONDER_GUARD_PERCENTAGE                   100
 #define SHOULD_SWITCH_TRUANT_PERCENTAGE                         100
-#define SHOULD_SWITCH_ALL_MOVES_BAD_PERCENTAGE                  100
+#define SHOULD_SWITCH_ALL_MOVES_BAD_PERCENTAGE                  0
 #define STAY_IN_STATS_RAISED                                    2  // Number of stat stages that must be raised across any stats before the AI won't switch mon out in certain cases
 
 // AI smart switching chances; if you want more complex behaviour, modify GetSwitchChance

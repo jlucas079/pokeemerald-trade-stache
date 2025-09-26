@@ -1,0 +1,211 @@
+raw`
+PacifidlogTown_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, PacifidlogTown_OnTransition
+	map_script MAP_SCRIPT_ON_RESUME, PacifidlogTown_OnResume
+	.byte 0
+
+PacifidlogTown_OnTransition:
+	setflag FLAG_VISITED_PACIFIDLOG_TOWN
+	end
+
+PacifidlogTown_OnResume:
+	setstepcallback STEP_CB_PACIFIDLOG_BRIDGE
+	end
+
+PacifidlogTown_EventScript_NinjaBoy::
+	msgbox PacifidlogTown_Text_NeatHousesOnWater, MSGBOX_NPC
+	end
+
+PacifidlogTown_EventScript_Girl::
+	msgbox PacifidlogTown_Text_FastRunningCurrent, MSGBOX_NPC
+	end
+
+PacifidlogTown_EventScript_Fisherman::
+	msgbox PacifidlogTown_Text_SkyPillarTooScary, MSGBOX_NPC
+	end
+
+PacifidlogTown_EventScript_TownSign::
+	msgbox PacifidlogTown_Text_TownSign, MSGBOX_SIGN
+	end
+
+PacifidlogTown_Text_FastRunningCurrent:
+	.string "The sea between PACIFIDLOG and\n"
+	.string "SLATEPORT has a fast-running tide.\p"
+	.string "If you decide to SURF, you could end\n"
+	.string "up swept away somewhere else.$"
+
+PacifidlogTown_Text_NeatHousesOnWater:
+	.string "See, isn't it neat?\n"
+	.string "These houses are on water!\p"
+	.string "I was born here!$"
+
+PacifidlogTown_Text_SkyPillarTooScary:
+	.string "The SKY PILLAR?\p"
+	.string "…Oh, you must mean that tall, tall\n"
+	.string "tower a little further out.\p"
+	.string "If you asked me, I wouldn't climb it.\n"
+	.string "It's too scary to get up that high.\p"
+	.string "Life at sea level in PACIFIDLOG,\n"
+	.string "that suits me fine.$"
+
+PacifidlogTown_Text_TownSign:
+	.string "PACIFIDLOG TOWN\p"
+	.string "“Where the morning sun smiles upon\n"
+	.string "the waters.”$"
+
+
+PacifidlogTown_EventScript_Trader1::
+    lock
+    faceplayer
+    msgbox PacifidlogTown_Text_Trader1_Hello, MSGBOX_YESNO
+    goto_if_eq VAR_RESULT, NO, PacifidlogTown_EventScript_Trader1_Decline
+    msgbox PacifidlogTown_Text_Trader1_ChooseMon, MSGBOX_DEFAULT
+    special ChoosePartyMon
+    waitstate
+    goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, PacifidlogTown_EventScript_Trader1_Decline
+    specialvar VAR_RESULT, ScriptGetPartyMonSpecies
+    goto_if_eq VAR_RESULT, SPECIES_TYRANITAR, PacifidlogTown_EventScript_Trader1_DoTrade
+    goto_if_eq VAR_RESULT, SPECIES_METAGROSS, PacifidlogTown_EventScript_Trader1_DoTrade
+    goto_if_eq VAR_RESULT, SPECIES_REGISTEEL, PacifidlogTown_EventScript_Trader1_DoTrade
+	goto_if_eq VAR_RESULT, SPECIES_REGIROCK, PacifidlogTown_EventScript_Trader1_DoTrade
+    goto_if_eq VAR_RESULT, SPECIES_REGICE, PacifidlogTown_EventScript_Trader1_DoTrade
+    msgbox PacifidlogTown_Text_Trader1_NoMatch, MSGBOX_DEFAULT
+    release
+    end
+
+PacifidlogTown_EventScript_Trader1_DoTrade::
+    special RemovePartyMonAtIndex
+    giveitem ITEM_LEFTOVERS, 1
+    msgbox PacifidlogTown_Text_Trader1_Thanks, MSGBOX_DEFAULT
+    release
+    end
+
+PacifidlogTown_EventScript_Trader1_Decline::
+    msgbox PacifidlogTown_Text_Trader1_Decline, MSGBOX_DEFAULT
+    release
+    end
+
+
+PacifidlogTown_EventScript_Trader2::
+    lock
+    faceplayer
+    msgbox PacifidlogTown_Text_Trader2_Hello, MSGBOX_YESNO
+    goto_if_eq VAR_RESULT, NO, PacifidlogTown_EventScript_Trader2_Decline
+    msgbox PacifidlogTown_Text_Trader2_ChooseMon, MSGBOX_DEFAULT
+    special ChoosePartyMon
+    waitstate
+    goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, PacifidlogTown_EventScript_Trader2_Decline
+    specialvar VAR_RESULT, ScriptGetPartyMonSpecies
+    goto_if_eq VAR_RESULT, SPECIES_BLAZIKEN PacifidlogTown_EventScript_Trader2_DoTrade
+    goto_if_eq VAR_RESULT, SPECIES_SCEPTILE, PacifidlogTown_EventScript_Trader2_DoTrade
+    goto_if_eq VAR_RESULT, SPECIES_SWAMPERT, PacifidlogTown_EventScript_Trader2_DoTrade
+	goto_if_eq VAR_RESULT, SPECIES_TENTACRUEL, PacifidlogTown_EventScript_Trader2_DoTrade
+    goto_if_eq VAR_RESULT, SPECIES_VAPOREON, PacifidlogTown_EventScript_Trader2_DoTrade
+    goto_if_eq VAR_RESULT, SPECIES_LANTURN, PacifidlogTown_EventScript_Trader2_DoTrade
+	goto_if_eq VAR_RESULT, SPECIES_MANTINE, PacifidlogTown_EventScript_Trader2_DoTrade
+    msgbox PacifidlogTown_Text_Trader2_NoMatch, MSGBOX_DEFAULT
+    release
+    end
+
+PacifidlogTown_EventScript_Trader2_DoTrade::
+    special RemovePartyMonAtIndex
+    giveitem ITEM_SERIOUS_MINT, 2
+    msgbox PacifidlogTown_Text_Trader2_Thanks, MSGBOX_DEFAULT
+    release
+    end
+
+PacifidlogTown_EventScript_Trader2_Decline::
+    msgbox PacifidlogTown_Text_Trader2_Decline, MSGBOX_DEFAULT
+    release
+    end
+
+
+PacifidlogTown_EventScript_Trader3::
+    lock
+    faceplayer
+    msgbox PacifidlogTown_Text_Trader3_Hello, MSGBOX_YESNO
+    goto_if_eq VAR_RESULT, NO, PacifidlogTown_EventScript_Trader3_Decline
+    msgbox PacifidlogTown_Text_Trader3_ChooseMon, MSGBOX_DEFAULT
+    special ChoosePartyMon
+    waitstate
+    goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, PacifidlogTown_EventScript_Trader3_Decline
+    specialvar VAR_RESULT, ScriptGetPartyMonSpecies
+    goto_if_eq VAR_RESULT, SPECIES_STARMIE, PacifidlogTown_EventScript_Trader3_DoTrade
+    goto_if_eq VAR_RESULT, SPECIES_LUDICOLO, PacifidlogTown_EventScript_Trader3_DoTrade
+    goto_if_eq VAR_RESULT, SPECIES_WHISCASH, PacifidlogTown_EventScript_Trader3_DoTrade
+	goto_if_eq VAR_RESULT, SPECIES_KINGDRA, PacifidlogTown_EventScript_Trader3_DoTrade
+    goto_if_eq VAR_RESULT, SPECIES_CLOYSTER, PacifidlogTown_EventScript_Trader3_DoTrade
+    goto_if_eq VAR_RESULT, SPECIES_MILOTIC, PacifidlogTown_EventScript_Trader3_DoTrade
+    msgbox PacifidlogTown_Text_Trader3_NoMatch, MSGBOX_DEFAULT
+    release
+    end
+
+PacifidlogTown_EventScript_Trader3_DoTrade::
+    special RemovePartyMonAtIndex
+    giveitem ITEM_ABILITY_CAPSULE, 1
+    giveitem ITEM_ABILITY_PATCH, 1 
+    msgbox PacifidlogTown_Text_Trader3_Thanks, MSGBOX_DEFAULT
+    release
+    end
+
+PacifidlogTown_EventScript_Trader3_Decline::
+    msgbox PacifidlogTown_Text_Trader3_Decline, MSGBOX_DEFAULT
+    release
+    end
+
+
+PacifidlogTown_Text_Trader1_Hello::
+    .string "Hi!\nI'm the Route 131 trader.\p"
+    .string "You can trade your encounter here!\n"
+	.string "Hope you haven't evolved it!\p"
+	.string "In return I will give you 1x\n"
+    .string "Leftovers.$"
+PacifidlogTown_Text_Trader1_ChooseMon::
+    .string "Let me take a look at your party.\nChoose a Pokémon.$"
+
+PacifidlogTown_Text_Trader1_NoMatch::
+    .string "Hmm... that's not quite what I'm looking for.\nCome back if you find one!$"
+
+PacifidlogTown_Text_Trader1_Thanks::
+    .string "Perfect! Thanks a bunch!\nHere, take this as a reward!$"
+
+PacifidlogTown_Text_Trader1_Decline::
+    .string "No worries!\nMaybe next time.$"
+
+PacifidlogTown_Text_Trader2_Hello::
+    .string "Hi!\nI'm the Route 132 trader.\p"
+    .string "You can trade your encounter here!\n"
+	.string "Hope you haven't evolved it!\p"
+	.string "In return I will give you 2x Serious\n"
+	.string "Mints.$"
+
+PacifidlogTown_Text_Trader2_ChooseMon::
+    .string "Let me take a look at your party.\nChoose a Pokémon.$"
+
+PacifidlogTown_Text_Trader2_NoMatch::
+    .string "Hmm... that's not quite what I'm looking for.\nCome back if you find one!$"
+
+PacifidlogTown_Text_Trader2_Thanks::
+    .string "Perfect! Thanks a bunch!\nHere, take this as a reward!$"
+
+PacifidlogTown_Text_Trader2_Decline::
+    .string "No worries!\nMaybe next time.$"
+
+PacifidlogTown_Text_Trader3_Hello::
+    .string "Hi!\nI'm the Pacifidlog trader.\p"
+    .string "You can trade your encounter here!\n"
+	.string "Hope you haven't evolved it!\p"
+	.string "In return I will give you 1x Ability\n"
+    .string "Capsule and 1x Ability Patch.$"
+PacifidlogTown_Text_Trader3_ChooseMon::
+    .string "Let me take a look at your party.\nChoose a Pokémon.$"
+
+PacifidlogTown_Text_Trader3_NoMatch::
+    .string "Hmm... that's not quite what I'm looking for.\nCome back if you find one!$"
+
+PacifidlogTown_Text_Trader3_Thanks::
+    .string "Perfect! Thanks a bunch!\nHere, take this as a reward!$"
+
+PacifidlogTown_Text_Trader3_Decline::
+    .string "No worries!\nMaybe next time.$"
+`
