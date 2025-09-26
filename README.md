@@ -18,7 +18,7 @@
 
 ## Playing the Game
 
-If you are interested in playing the hack, check out this [PokéCommunity post](https://www.pokecommunity.com/threads/pok%C3%A9mon-trade-stache.537721/)
+- If you are interested in playing the hack, check out this [PokéCommunity post](https://www.pokecommunity.com/threads/pok%C3%A9mon-trade-stache.537721/)
 ---
 
 ## Notes
